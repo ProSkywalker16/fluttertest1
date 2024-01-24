@@ -13,63 +13,77 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String buttonName = 'Click';
-  int currentIndex = 0;
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
+      home: MyAppExt()
+    );
+  }
+}
+
+class MyAppExt extends StatefulWidget {
+  const MyAppExt({super.key});
+
+  @override
+  State<MyAppExt> createState() => _MyAppExtState();
+}
+
+class _MyAppExtState extends State<MyAppExt> {
+  String buttonName = 'Click';
+  int currentIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blueAccent,
           title: const Center(child: Text('App Test')),
         ),
         body: Center(
-          
-          child: SizedBox(
-            width: double.infinity,
-            height:double.infinity,
-            child: Row(
-              mainAxisAlignment:  MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 246, 246, 246),
-                    backgroundColor: Colors.blueAccent,
+          child: (currentIndex == 0)
+              ? Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  color: Color.fromARGB(255, 205, 12, 57),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Color.fromARGB(255, 246, 246, 246),
+                          backgroundColor: Colors.blueAccent,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    const NextPage(),
+                              ),
+                            );
+                          });
+                        },
+                        child: const Text('Next Page'),
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Color.fromARGB(255, 246, 246, 246),
+                          backgroundColor: Color.fromARGB(255, 11, 7, 2),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            buttonName = 'LOL';
+                          });
+                        },
+                        child: Text(buttonName),
+                      ),
+                    ],
                   ),
-                  onPressed: () {
-                    setState(() {
-                      buttonName = 'You have Clicked';
-                    });
-                  },
-                  
-                  child: Text(buttonName),
-                  
-                  
-                ),
-            
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 246, 246, 246),
-                    backgroundColor: Colors.blueAccent,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      buttonName = 'LOL';
-                    });
-                  },
-                  child: Text(buttonName),
-                ),
-              ],
-            ),
-          ),
-
-          
+                )
+              : Image.asset('images/ferrariTestImage.jpg'),
         ),
-
-        
-        
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(
@@ -88,7 +102,21 @@ class _MyAppState extends State<MyApp> {
             });
           },
         ),
-      ),
+      );
+  }
+}
+
+
+
+
+
+class NextPage extends StatelessWidget {
+  const NextPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
     );
   }
 }
