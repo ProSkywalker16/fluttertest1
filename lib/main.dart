@@ -41,6 +41,7 @@ class _MyAppExtState extends State<MyAppExt> {
           title: const Center(child: Text('App Test')),
         ),
         body: Center(
+
           child: (currentIndex == 0)
               ? Container(
                   width: double.infinity,
@@ -83,6 +84,7 @@ class _MyAppExtState extends State<MyAppExt> {
                   ),
                 )
               : Image.asset('images/ferrariTestImage.jpg'),
+
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
