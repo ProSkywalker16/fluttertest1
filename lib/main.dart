@@ -26,43 +26,31 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           
-          child: SizedBox(
-            width: double.infinity,
-            height:double.infinity,
-            child: Row(
-              mainAxisAlignment:  MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 246, 246, 246),
-                    backgroundColor: Colors.blueAccent,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      buttonName = 'You have Clicked';
-                    });
-                  },
-                  
-                  child: Text(buttonName),
-                  
-                  
-                ),
-            
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 246, 246, 246),
-                    backgroundColor: Colors.blueAccent,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      buttonName = 'LOL';
-                    });
-                  },
-                  child: Text(buttonName),
-                ),
-              ],
-            ),
+          child: Column(
+            mainAxisAlignment:  MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    buttonName = 'You have Clicked';
+                  });
+                },
+                
+                child: Text(buttonName),
+                
+                
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    buttonName = 'LOL';
+                  });
+                },
+                child: Text(buttonName),
+              ),
+            ],
           ),
 
           
