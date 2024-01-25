@@ -66,7 +66,7 @@ class _MyAppExtState extends State<MyAppExt> {
                             );
                           });
                         },
-                        child: const Text('Next Page'),
+                        child: const Text('Following Page'),
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
