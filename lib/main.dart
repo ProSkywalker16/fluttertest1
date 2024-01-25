@@ -54,7 +54,7 @@ class _MyAppExtState extends State<MyAppExt> {
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           foregroundColor: Color.fromARGB(255, 246, 246, 246),
-                          backgroundColor: Colors.blueAccent,
+                          backgroundColor: Color.fromARGB(255, 86, 224, 234),
                         ),
                         onPressed: () {
                           setState(() {
