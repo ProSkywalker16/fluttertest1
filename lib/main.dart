@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'next_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -110,13 +111,3 @@ class _MyAppExtState extends State<MyAppExt> {
   }
 }
 
-class NextPage extends StatelessWidget {
-  const NextPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-    );
-  }
-}
